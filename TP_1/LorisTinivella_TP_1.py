@@ -12,30 +12,29 @@ def load_data(json_path):
         data = json.load(file)
         return data
 
-# barre de recherche / outil de recherche
+# filtre les lignes selon le texte tapé
 def filtrer_tableau(texte_recherche):
     texte_recherche = texte_recherche.lower()
-    for ligne in range(table.rowCount()):
-        # par défaut, on cache la ligne
+    for ligne in range(table.rowCount()): # parcourt chaque ligne du tableau
         ligne_visible = False
-        for colonne in range(table.columnCount()):
+        for colonne in range(table.columnCount()): # parcourt chaque colonne de cette ligne
             item = table.item(ligne, colonne)
             if item and texte_recherche in item.text().lower():
                 ligne_visible = True
-                break  # pas besoin de checker les autres colonnes
+                break
         table.setRowHidden(ligne, not ligne_visible)
 
 # Ouvrir application
 app = QApplication()
 
-# widget principal + layout (pour contenir la barre de recherche ET le tableau)
+# widget principal + layout pour faire la barre de recherche et le tableau
 fenetre = QWidget()
 layout = QVBoxLayout()
 
 # barre de recherche
 barre_recherche = QLineEdit()
-barre_recherche.setPlaceholderText("Rechercher...")
-barre_recherche.textChanged.connect(filtrer_tableau)
+barre_recherche.setPlaceholderText("Rechercher..")
+barre_recherche.textChanged.connect(filtrer_tableau)  # appelle filtrer_tableau à chaque frappe
 
 # Afficher interface du tableau
 table = QTableWidget()
@@ -65,8 +64,8 @@ table.setColumnCount(len(colonnes))
 table.setHorizontalHeaderLabels(colonnes)
 
 # remplir le tableau
-for i, item in enumerate(data):
-    for j, cle in enumerate(colonnes):
+for i, item in enumerate(data):  # parcourt chaque ligne de data
+    for j, cle in enumerate(colonnes): # parcourt chaque colonne
         valeur = str(item[cle])
         table.setItem(i, j, QTableWidgetItem(valeur))
 
