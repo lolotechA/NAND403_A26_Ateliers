@@ -1,0 +1,9 @@
+import maya.cmds as cmds
+
+cmds.playbackOptions(min=1, max=100)
+
+cube = cmds.polyCube()[0]
+
+cmds.setKeyframe(cube, attribute="translateX", value=0, time=1)
+cmds.setKeyframe(cube, attribute="translateX", value=50, time=50)
+cmds.setKeyframe(cube, attribute="translateX", value=100, time=100)
