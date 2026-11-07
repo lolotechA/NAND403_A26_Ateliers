@@ -18,7 +18,7 @@ Avoir le script sur maya :
 Le bouton est maintenant créé et le script peut être lancé directement depuis le Shelf.
 
 
-
+ 
 
 
 
