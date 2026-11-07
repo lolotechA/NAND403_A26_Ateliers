@@ -1,11 +1,11 @@
 Avoir le script sur maya :
 
-1. Télécharger le dossier `Atelier_8` depuis GitHub.
+1. Télécharger le dossier Atelier_8 depuis GitHub.
 2. Placer le dossier dans un emplacement accessible sur l'ordinateur.
 3. Ouvrir Maya.
 4. Afficher le Shelf dans Maya.
 5. Créer une nouvelle catégorie (Shelf) et lui attribuer un nom.
-6. Ouvrir le fichier `Atelier8.py` dans le dossier `Atelier_8`.
+6. Ouvrir le fichier `Atelier8.py` dans le dossier Atelier_8.
 7. Copier le code du script.
 8. Dans Maya, ouvrir Windows → General Editors → Script Editor.
 9. Aller dans l'onglet Python et coller le code.
