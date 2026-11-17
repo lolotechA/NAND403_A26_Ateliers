@@ -96,3 +96,4 @@ button.clicked.connect(organiser)
 
 # Afficher la fenêtre.
 window.show()
+# correction
